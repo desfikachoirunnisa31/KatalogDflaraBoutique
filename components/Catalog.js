@@ -18,10 +18,11 @@ const TtIcon = () => (<Icon d="M16 3c.3 2.4 1.8 4 4 4.2v3.2c-1.5 0-2.9-.5-4-1.3v
 const PinIcon = () => (<Icon><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" /><circle cx="12" cy="9.5" r="2.5" /></Icon>);
 
 function Price({ p }) {
+  const hasDisc = p.discount_percent > 0;
   return (
     <div className="price">
-      <b>{rupiah(finalPrice(p))}</b>
-      {p.discount_percent > 0 && <s>{rupiah(p.price)}</s>}
+      <b className={hasDisc ? 'sale' : ''}>{rupiah(finalPrice(p))}</b>
+      {hasDisc && <s>{rupiah(p.price)}</s>}
     </div>
   );
 }
