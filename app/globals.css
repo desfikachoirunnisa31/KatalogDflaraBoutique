@@ -67,6 +67,7 @@ a { color: inherit; }
 .price { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
 .price b { font-weight: 500; font-size: 1.02rem; }
 .price s { color: var(--mute); font-size: .88rem; }
+.price b.sale { color: #d0011b; font-weight: 600; }
 .stk { font-size: .82rem; }
 .stk.ok { color: var(--ok); } .stk.warn { color: var(--warn); } .stk.bad { color: var(--bad); }
 .empty { padding: 90px 0; text-align: center; color: var(--mute); font-family: var(--serif); font-size: 1.3rem; }
@@ -262,8 +263,9 @@ tr.none td { text-align: center; color: var(--mute); padding: 40px 12px; }
   .grid { grid-template-columns: repeat(2, 1fr); gap: 28px 14px; padding-bottom: 60px; }
   .card h3 { font-size: 1.02rem; }
   .ov { align-items: end; padding: 0; }
-  .modal { grid-template-columns: 1fr; max-height: 92dvh; overflow-y: auto; }
-  .modal .ph { min-height: 0; aspect-ratio: 4/5; max-height: 52dvh; }
+  .modal { display: flex; flex-direction: column; width: 100%; max-height: 92dvh; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  .modal .ph { flex: none; aspect-ratio: auto; min-height: 0; max-height: none; height: min(112vw, 52dvh); }
+  .modal .info { flex: none; }
   .modal .info { padding: 22px 20px 26px; }
   .modal h2 { font-size: 1.5rem; }
   .visit-btns .btn { flex: 1 1 auto; justify-content: center; }
